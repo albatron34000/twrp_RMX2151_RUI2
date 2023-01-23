@@ -115,7 +115,7 @@ jobs:
       
     - name: Clone device tree
       run: |
-        git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+        git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }}
       working-directory: ${{ steps.pwd.outputs.pwd }}
 
     - name: Clone common tree
