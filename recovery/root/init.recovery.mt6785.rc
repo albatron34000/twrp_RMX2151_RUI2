@@ -57,14 +57,7 @@ service init-device-sh /system/bin/init.device.sh
 
 on boot
     start init-device-sh
-    start vendor.vibrator-1-0 
-    
-service vendor.vibrator-1-0 system/bin/android.hardware.vibrator@1.0-service
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-  
+
 on property:hwservicemanager.ready=true
     start hal_cryptoeng_oppo
     start mobicore
