@@ -1,9 +1,8 @@
-ro.secure=0
-ro.adb.secure=0
-ro.debuggable=1
-ro.sf.lcd_density=440
-persist.sys.isUsbOtgEnabled=true
-ro.sys.usb.mtp.whql.enable=0
-ro.sys.usb.storage.type=mtp
 ro.mediatek.platform=MT6785
 ro.hardware=mt6785
+ro.hardware.kmsetkey=beanpod
+ro.hardware.gatekeeper=beanpod
+ro.mtk_tee_gp_support=1
+ro.mtk_microtrust_tee_support=1
+ro.crypto.volume.filenames_mode=aes-256-cts
+fbe.metadata.wrappedkey=true
