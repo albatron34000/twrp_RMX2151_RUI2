@@ -115,22 +115,41 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
 TW_DEVICE_VERSION := 4
+# TWRP specific build flags
 TW_THEME := portrait_hdpi
-TW_Y_OFFSET := 115
-TW_H_OFFSET := -115
+RECOVERY_SDCARD_ON_DATA := true
 TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_INCLUDE_NTFS_3G := true
+TW_USE_TOOLBOX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
-TW_DEFAULT_BRIGHTNESS := 1024
-TW_EXCLUDE_APEX := true
-TW_INCLUDE_NTFS_3G := true
+TW_DEFAULT_BRIGHTNESS := 1200
+TW_SCREEN_BLANK_ON_BOOT := false
+TW_NO_SCREEN_BLANK := true
+TW_SKIP_COMPATIBILITY_CHECK := true
+TW_Y_OFFSET := 50
+TW_H_OFFSET := -50
+TARGET_USES_MKE2FS := true
+TW_EXCLUDE_TWRPAPP := true
+TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
+TW_OZIP_DECRYPT_KEY := 0000
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone3/temp
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_NO_REBOOT_RECOVERY := false
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
 
-# Debug flags
+# Hack: prevent anti rollback
+PLATFORM_SECURITY_PATCH := 2099-12-31
+
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true
+
+# Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
