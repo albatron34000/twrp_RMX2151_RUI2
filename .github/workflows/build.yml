@@ -1,4 +1,4 @@
-name: Alldocube iPlay50 Pro - TWRP
+name: build - TWRP
 
 on:
   workflow_dispatch:
